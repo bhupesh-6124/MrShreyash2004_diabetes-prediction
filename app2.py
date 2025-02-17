@@ -4,13 +4,19 @@ from flask_mail import Mail, Message
 import random
 import pickle
 import os
+from sqlalchemy import create_engine
+import psycopg2
+from sklearn.linear_model import LogisticRegression
+from joblib import dump
+from mysql import connector
+
 
 app = Flask(__name__)
 
 app.secret_key = 'your_secret_key'
 
 # Database and Mail Configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Shre0802004@localhost/diabetes_app'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://neondb_owner:npg_WbBu08ndNvmL@ep-noisy-dust-a8k2z0xf-pooler.eastus2.azure.neon.tech/neondb?sslmode=require'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
