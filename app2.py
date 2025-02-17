@@ -9,7 +9,8 @@ import psycopg2
 from sklearn.linear_model import LogisticRegression
 from joblib import dump
 from mysql import connector
-
+from savings import app
+from savings import routs
 
 app = Flask(__name__)
 
